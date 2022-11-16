@@ -1,0 +1,6 @@
+SECURITY GROUP:
+	* Security group is set of firewall rules to control the network trafic
+there are few types are there
+1.HTTPS:HYPER TEST TRANSFER PROTOCAL SECURITY
+2.HTTP:HYPER TEXT TRANSFER PROTOCAL 
+3.SSH:SECURITY SHELL
