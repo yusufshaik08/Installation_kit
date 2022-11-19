@@ -1,3 +1,0 @@
-PYTHON:
-Python is scripting language
-it is useful for present generation
