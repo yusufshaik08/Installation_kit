@@ -6,3 +6,4 @@ main()
 	scanf("%d%d",&a,&b);
 	printf("THE SUM=%d",a+b);
 }
+//*THIS PROGRAM DEVELOPED BY VENKATAPATHI *//
