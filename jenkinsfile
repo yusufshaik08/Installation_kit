@@ -43,9 +43,7 @@ pipeline{
 			 stage('deploy'){
 				agent any
 				steps{
-					sh label: ' ',script: '''rm -rf mydockerfile
-					}
-				}	
+					sh label: ' ',script: '''rm -rf mydockerfile				
 mkdir docker
 cd docker
 cp /var/lib/jenkins/workspace/package1/target/sample.war .
@@ -59,3 +57,5 @@ sudo docker build -t myproject:$BUILD_NUMBER .
 sudo docker run -dt -P myproject:$BUILD_NUMBER'''
 		}
 }		
+}
+}
