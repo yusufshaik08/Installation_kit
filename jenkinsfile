@@ -40,7 +40,7 @@ pipeline{
 					sh 'mvn test'
 				}
 			}
-			/*stage('Deploy'){
+			 stage('deploy'){
 				agent any
 				steps{
 					sh label: ' ',script: '''rm -rf mydockerfile
@@ -56,6 +56,6 @@ EXPOSE 8080
 CMD ["catalina.sh" , "run"]
 EOT
 sudo docker build -t myproject:$BUILD_NUMBER .
-sudo docker run -dt -P myproject:$BUILD_NUMBER */
+sudo docker run -dt -P myproject:$BUILD_NUMBER'''
 		}
 }		
