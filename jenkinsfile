@@ -40,5 +40,20 @@ pipeline{
 					sh 'mvn test'
 				}
 			}
+			stage('Deploy'){
+				agent any
+				steps{
+					sh label: ' ',script: '''rm -rf mydockerfile
+mkdir docker
+cd docker
+cp /var/lib/jenkins/workspace/package1/target/sample.war .
+cat <<EOT>> dockerfile
+FROM tomcat
+ADD sample.war /user/local/tomcat/webapps
+EXPOSE 8080
+CMD ["catalina.sh" , "run"]
+EOT
+sudo docker build -t myproject:$BUILD_NUMBER .
+sudo docker run -dt -P myproject:$BUILD_NUMBER
 		}
 }		
