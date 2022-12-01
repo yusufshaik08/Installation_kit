@@ -44,6 +44,8 @@ pipeline{
 				agent any
 				steps{
 					sh label: ' ',script: '''rm -rf mydockerfile
+					}
+				}	
 mkdir docker
 cd docker
 cp /var/lib/jenkins/workspace/package1/target/sample.war .
