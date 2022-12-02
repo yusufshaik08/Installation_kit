@@ -1,0 +1,52 @@
+JAVA ,GIT , MAVEN , JENKINS INSTALLATION PROCESS
+First checks the Operating system
+cat /etc/os-release
+
+JAVA INSTALLATION PROCESS:
+
+	step 1: Go to on CLI
+			* yum install fontconfig Java-11-openJdk
+			* sudo amazon-linux-extras install java-openjdk11
+			* alternatives --config java
+				Enter to keep the current selection[+], or type selection number:1
+	step 2: SET-UP JAVA PATH IN ENVIRONMENT VARIABLES
+			*vim /etc/profile(GO VIM EDITOR AND GO DOWN AND SEE)
+				export PATH USER LOGNAME MAIL HOSTNAME HISTSIZE HISTCONTROL
+				-->export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-11.0.16.0.8-1.amzn2.0.1.x86_64
+				-->export PATH=$JAVA_HOME:/bin:$PATH
+	step 3: YOU SHOULD CHECK JAVA INSTALLED OR NOT.
+			 * source /etc/profile---Checks perfect or not
+			 * echo $JAVA_HOME ---if Dispalys path then n perfect installed
+			 /user/lib/jvm/java-11-openjdk-11.0.16.0.8-1.amzn2.0.1.x86_64
+
+MAVEN INSTALLATION PROCESS:
+
+	step 1 : mvn --version
+	step 2 : yum install maven -y(centos) or apt-get install maven -y(ubuntu)
+	step 3 : mvn --version
+	step 4 : vim /etc/profile
+				export PATH USER LOGNAME MAIL HOSTNAME HISTSIZE HISTCONTROL
+				-->export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-11.0.16.0.8-1.amzn2.0.1.x86_64
+				-->export PATH=$JAVA_HOME:/bin:$PATH
+				-->export $MAVEN_HOME=/usr/share/maven
+
+GIT INSTALLATION PROCESS:
+	step 1 : git --version
+	step 2 : yum install git -y(centos) or apt-get install git -y(ubuntu)
+	step 3 : git --version
+
+GO TO Google search 
+	step 1: Type "Jenkins download" in search box of google
+	step 2: Download Jenkins 2.375.1 LTS for:
+			Download Jenkins 2.375.1 LTS for: choose any
+			I will take this one -----Click on -----"Centos/Red hate/Fedora"
+	step 3: GO TO CLI(Command Line Interface) and then copy and paste one by one below links into CLI and install
+			* sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+			* sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+			* yum install jenkins
+	step 4: jenkins --version
+	step 5:GO AND OPEN WEB BROWSER AND PASTE IP AND JENKINS PORT(23-45-67-332:8080) ON ADDRESS BAR
+			copy this link "/var/lib/jenkins/secrets/initialAdminPassword" from jenkins and paste on CLI and enter and show password and copy
+	    --->cat /var/lib/jenkins/secrets/initialAdminPassword
+	step 6: take password from CLI and paste on that text box in jenkins UI
+	step 7: CREATE PASSWORD AND START JENKINS
