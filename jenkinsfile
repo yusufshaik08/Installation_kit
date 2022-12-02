@@ -43,7 +43,7 @@ pipeline{
 			 stage('deploy'){
 				agent any
 				steps{
-					sh label: ' ',script: '''rm -rf mydockerfile				
+					sh label: ' ',script: '''rm -rf docker			
 					mkdir docker
 					cd docker
 					cp /var/lib/jenkins/workspace/package/target/sample.war .
