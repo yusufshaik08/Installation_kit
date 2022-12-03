@@ -46,7 +46,7 @@ pipeline{
 					sh label: ' ',script: '''rm -rf docker			
 					mkdir docker
 					cd docker
-					cp /var/lib/jenkins/workspace/package/target/sample.war .
+					cp /var/lib/jenkins/workspace/package/target/cloud.war .
 					cat <<EOT>> dockerfile
 					FROM tomcat
 					ADD sample.war /user/local/tomcat/webapps
